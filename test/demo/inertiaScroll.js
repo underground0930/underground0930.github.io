@@ -13,40 +13,25 @@
     var subtraction = 0; // スクロール量の差
     var rateArray = []; // それぞれの要素の慣性の倍率を格納する
 
-    var settings = $.extend({
-      transitionDuration:"1.5s",
-      moveRate: 0.09
-    },options);
-
     $this.each(function(){
       var dur = $(this).data("dur");
-      $(this).css({
-//        "transitionDuration": dur + "s"
-        });
+      rateArray.push(dur);
     });
     $parent.css({
-      "position":"fixed",
- //       "transitionDuration": 0.8 + "s"
+      "position":"fixed"
     });
 
-    function test(){
+    function smoothScroll(){
         windowOffset = $window.scrollTop();
-        subtraction = windowOffset - oldOffset;
-        move = move + subtraction;
-        moveChild = moveChild + subtraction * settings.moveRate
-        oldOffset = windowOffset;
-
-        console.log(moveChild)
+        move += (windowOffset - move) * 0.1
+        moveChild += (windowOffset - moveChild) * 0.03
         $parent.css({transform:"translate3d(" + 0 + "," + -move  + "px ," + 0 +")"});
-
         $this.each(function(i){
-            $(this).css({transform:"translate3d(" + 0 + "," + -moveChild  + "px ," + 0 +")"});
+            $(this).css({transform:"translate3d(" + 0 + "," + -(moveChild + moveChild * rateArray[i] * 0.01)  + "px ," + 0 +")"});
         });
-        requestAnimationFrame(test)
-
+        requestAnimationFrame(smoothScroll)
     }
-   test();
-
+   smoothScroll();
 
   $window
     .on("load.inertiaScroll",function(){
