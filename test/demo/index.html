@@ -88,7 +88,7 @@
     function smoothScroll(){
         windowOffset = $window.scrollTop();
         moveParent += (windowOffset - moveParent) * 0.08;
-        moveChild += (windowOffset - moveChild) * 0.03;
+        moveChild += (windowOffset * 0.1 - moveChild) * 0.03;
 
         $parent.css({transform:"translate3d(" + 0 + "," + -moveParent  + "px ," + 0 +")"});
         $this.each(function(i){
