@@ -17,10 +17,40 @@
 			color:#f00 !important;
 		}
 	</style>
-	<!--#include virtual="inc/ga.html" -->
+
+	<!-- ga -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-56791268-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<!-- / ga -->
+
 </head>
 <body id="bbb">
-	<!--#include virtual="inc/header.html" -->
+
+	<!-- header -->
+	<div id="fb-root"></div>
+	<header id="header">
+		<h1>header</h1>
+	</header>
+	<h1 id="time"></h1>
+	<div id="commonSns">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.yahoo.co.jp/" data-text="YAHOO"></a>
+		<div class="fb-share-button" data-layout="button_count" data-href="http://www.yahoo.co.jp/"></div>
+	</div>
+	<hr>
+	<div class="detailSns" id="detailSns">
+		<a href="https://twitter.com/share" class="twitter-share-button"></a>
+		<div class="fb-share-button" data-layout="button_count"></div>
+	</div>
+	<!-- /header -->
+
 	<div id="contentsWrap">
 		<div id="contents" data-bodyid="bbb">
 			<nav id="nav">
@@ -39,7 +69,19 @@
 			</p>
 		</div>
 	</div>
-	<!--#include virtual="inc/footer.html" -->
+
+	<hr>
+	<!-- footer -->
+	<img src="img/apple.jpg" width="200" alt="">
+	<img src="img/banana.jpg" width="200" alt="">
+	<img src="img/grape.jpg" width="200" alt="">
+	<img src="img/melon.jpg" width="200" alt="">
+	<img src="img/orange.jpg" width="200" alt="">
+	<footer id="footer">
+		<h1>footer</h1>
+	</footer>
+	<img src="img/loader.gif" height="80" width="80" alt="" id="loader">
+	<!-- /footer -->
 
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="jquery.pjax.js"></script>
