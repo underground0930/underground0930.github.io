@@ -7,10 +7,10 @@
 
     var settings = $.extend({
       parent: "",
-      val1: 0.02,
-      val2: 0.1,
-      val3: 0.08
-    },options);
+      childDelta1: 0.02,
+      childDelta2: 0.1,
+      parentDelta: 0.08
+    }, options);
 
 
     //////////////////////////////////////////////////
@@ -33,7 +33,7 @@
       this.margin = margin;
     }
     ChildBox.prototype.update = function(windowOffset,offsetBottom = 0){
-        this.offset += (windowOffset * settings.val1 * Number(this.speed) - this.offset) * settings.val2;
+        this.offset += (windowOffset * settings.childDelta1 * Number(this.speed) - this.offset) * settings.childDelta2;
         this.elm.css({transform:'translate3d(' + 0 + ',' + ( Number(this.margin) - Number(this.offset) ) + 'px ,' + 0 +')'});        
     }
 
@@ -50,7 +50,7 @@
       }
     });
     ParentBox.prototype.update = function(windowOffset){
-        this.offset += (windowOffset - this.offset) * settings.val3;
+        this.offset += (windowOffset - this.offset) * settings.parentDelta;
         this.elm.css({transform:'translate3d(' + 0 + ',' + -this.offset  + 'px ,' + 0 +')'});
     }
     ParentBox.prototype.setcss = function(){
