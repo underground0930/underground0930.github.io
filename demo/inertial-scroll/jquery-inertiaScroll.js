@@ -1,3 +1,15 @@
+/**
+jquery-inertiaScroll
+
+Copyright(c) 2016 Go Nishiduka
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+
+Last Update: 2016-12-28
+Version:1.0.0
+*/
+
 (function($){
   $.fn.inertiaScroll = function(options){
 
