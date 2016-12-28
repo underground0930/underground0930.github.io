@@ -25,13 +25,12 @@
 <script src="inertiaScroll.js"></script>  
 <script>
 $(function(){
-  var $box = $(".box");
-  var $content = $("#content");
 
-  $box.inertiaScroll({},$content)
+  $(".box").inertiaScroll({
+    parent: $("#content")
+  });
 
-
-  $box.each(function(){
+  $(".box").each(function(){
     var speed = $(this).data("speed");
     var height = $(this).height() + "px";
     $(this).css("line-height",height).text(speed);

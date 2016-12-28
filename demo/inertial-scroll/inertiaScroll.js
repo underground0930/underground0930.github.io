@@ -1,29 +1,30 @@
 (function($){
-  $.fn.inertiaScroll = function(options,parent){
+  $.fn.inertiaScroll = function(options){
 
-    /////////////////////////
-    // jqeury object
-    /////////////////////////
-
-    var $window = $(window);
-    var $body = $('body');
-    var $parent = parent;
-    var $child = this;
-
-
-    /////////////////////////
+    //////////////////////////////////////////////////
     // options
-    /////////////////////////
+    //////////////////////////////////////////////////
 
     var settings = $.extend({
+      parent: "",
       val1: 0.02,
       val2: 0.1,
       val3: 0.08
     },options);
 
-    /////////////////////////
+
+    //////////////////////////////////////////////////
+    // jqeury object
+    //////////////////////////////////////////////////
+
+    var $window = $(window);
+    var $body = $('body');
+    var $parent = settings.parent;
+    var $child = this;
+
+    //////////////////////////////////////////////////
     // inertiaScroll　childClass
-    /////////////////////////
+    //////////////////////////////////////////////////
 
     var ChildBox = function(elm, offset = 0, speed = 1, margin = 0){
       this.elm = elm;
@@ -36,9 +37,9 @@
         this.elm.css({transform:'translate3d(' + 0 + ',' + ( Number(this.margin) - Number(this.offset) ) + 'px ,' + 0 +')'});        
     }
 
-    /////////////////////////
+    //////////////////////////////////////////////////
     // inertiaScroll　parentClass
-    /////////////////////////
+    //////////////////////////////////////////////////
 
     var ParentBox = function(elm, offset = 0, speed = 1.0, margin = 0){
         ChildBox.apply(this,arguments);
@@ -59,9 +60,9 @@
       });
     }
 
-    /////////////////////////
+    //////////////////////////////////////////////////
     // make Object
-    /////////////////////////
+    //////////////////////////////////////////////////
 
     var Boxes = function(){
       this.ChildBox = [];
@@ -99,9 +100,9 @@
       }
     }
 
-    /////////////////////////
+    //////////////////////////////////////////////////
     // Done
-    /////////////////////////
+    //////////////////////////////////////////////////
     $(function(){
       $body.height($parent.height());
       var boxes = new Boxes();
