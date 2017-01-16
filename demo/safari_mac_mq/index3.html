@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        height: 2000px;
+    }
+
+    @media screen and (max-width: 600px) {
+        body {
+            background-color: pink;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1"></h1>
+    <script>
+    // 変数
+    var breakpoint = 600;
+    var dom = document.getElementById("h1");
+
+    // 関数
+    var getW = function() {
+        return window.innerWidth;
+    }
+    var setText = function(dom, text) {
+            if (window.matchMedia( "(max-width: "+breakpoint+"px)" ).matches) {
+                dom.innerHTML = "ピンク: " + text;
+            } else {
+                dom.innerHTML = "白: " + text;
+            }
+        }
+        // 実行
+    setText(dom, getW());
+
+    // バインド
+    window.onresize = function() {
+        setText(dom, getW());
+    }
+    </script>
+</body>
+
+</html>
