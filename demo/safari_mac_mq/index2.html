@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>2</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+      h1{
+        height: 2000px;
+      }
+    @media screen and (max-width: 600px) {
+      body{
+        background-color: pink;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="h1"></h1>
+  <script>
+    // 変数
+    var breakpoint = 600;
+    var dom = document.getElementById("h1");
+    var isMacSafari = (function(){ //mac safariの判定
+      ua = window.navigator.userAgent.toLowerCase()
+      if ((ua.indexOf('safari') !== -1) && (ua.indexOf('chrome') === -1) && (ua.indexOf('mac') !== -1)){
+        return true
+      }else{
+        return false
+      }
+    })();
+    var scrollBar = isMacSafari ? window.innerWidth - document.body.clientWidth : 0; //バーの幅を出す
+
+    // 関数
+    var getW = function(){
+      return window.innerWidth - scrollBar;
+    }
+    var setText = function(dom,text){
+      if(getW() > breakpoint){
+        dom.innerHTML = "白: " + text;
+      }else{
+        dom.innerHTML = "ピンク: " + text;
+      }
+    }
+
+    // 実行
+    setText(dom,getW());
+
+    // バインド
+    window.onresize = function(){
+      setText(dom,getW());
+    }
+
+  </script>
+</body>
+</html>
