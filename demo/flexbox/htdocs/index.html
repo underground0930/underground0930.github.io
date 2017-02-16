@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+    <title>flexbox</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <h1 class="title">flexbox</h1>
+    <section class="parent">
+      <h2 class="title2">子要素の配置方向 (親要素に指定)</h2>
+      <!--//////////////////////////////////////-->
+      <section class="section">
+        <h3 class="title3">flex-direction: row;</h3>
+        <p class="text">左から並ぶ</p>
+        <ul class="list direction--row">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-direction: column;</h3>
+        <p class="text">上から並ぶ</p>
+        <ul class="list direction--column">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-direction: row-reverse;</h3>
+        <p class="text">右から並ぶ</p>
+        <ul class="list direction--row-reverse">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-direction: column-reverse;</h3>
+        <p class="text">下から並ぶ</p>
+        <ul class="list direction--column-reverse">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+    </section>
+    <!--//////////////////////////////////////-->
+    <section class="parent">
+      <h2 class="title2">子要素の折り返し設定 (親要素に指定)</h2>
+      <section class="section">
+        <h3 class="title3">flex-wrap: nowrap;</h3>
+        <p class="text">折り返さない</p>
+        <ul class="list wrap--nowrap">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+          <li class="list__child">4</li>
+          <li class="list__child">5</li>
+          <li class="list__child">6</li>
+          <li class="list__child">7</li>
+          <li class="list__child">8</li>
+          <li class="list__child">9</li>
+          <li class="list__child">10</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-wrap: wrap;</h3>
+        <p class="text">下に折り返す</p>
+        <ul class="list wrap--wrap">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+          <li class="list__child">4</li>
+          <li class="list__child">5</li>
+          <li class="list__child">6</li>
+          <li class="list__child">7</li>
+          <li class="list__child">8</li>
+          <li class="list__child">9</li>
+          <li class="list__child">10</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-wrap: wrap-reverse;</h3>
+        <p class="text">上に折り返す</p>
+        <ul class="list wrap--wrap-reverse">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+          <li class="list__child">4</li>
+          <li class="list__child">5</li>
+          <li class="list__child">6</li>
+          <li class="list__child">7</li>
+          <li class="list__child">8</li>
+          <li class="list__child">9</li>
+          <li class="list__child">10</li>
+        </ul>
+      </section>
+    </section>
+    <!--//////////////////////////////////////-->
+    <section class="parent">
+      <h2 class="title2">columnとwrapの同時指定 (親要素に指定)</h2>
+      <section class="section">
+        <h3 class="title3">flex-flow: column wrap;</h3>
+        <p class="text">flex-column と flex-wrap　を同時に指定する</p>
+        <ul class="list flow--column-wrap h400">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+          <li class="list__child">4</li>
+          <li class="list__child">5</li>
+          <li class="list__child">6</li>
+          <li class="list__child">7</li>
+          <li class="list__child">8</li>
+          <li class="list__child">9</li>
+          <li class="list__child">10</li>
+        </ul>
+      </section>
+    </section>
+    <!--//////////////////////////////////////-->
+    <section class="parent">
+      <h2 class="title2">水平方向の揃え方 (親要素に指定)</h2>
+      <section class="section">
+        <h3 class="title3">justify-content: flex-start;</h3>
+        <p class="text">横配置で、左揃え。縦配置で、上揃え。</p>
+        <ul class="list justify--flex-start">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+        <ul class="list direction--column justify--flex-start">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">justify-content: flex-end;</h3>
+        <p class="text">横配置で、右揃え。縦配置で、下揃え。</p>
+        <ul class="list justify--flex-end">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+        <ul class="list direction--column justify--flex-end">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">justify-content: center;</h3>
+        <p class="text">中央ぞろえ</p>
+        <ul class="list justify--center">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">justify-content: space-between;</h3>
+        <p class="text"> 等間隔にあける</p>
+        <ul class="list justify--space-between">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">justify-content: space-around;</h3>
+        <p class="text"> 等間隔にあける、両端もその他のマージンの半分空ける</p>
+        <ul class="list justify--space-around">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+    </section>
+    <!--//////////////////////////////////////-->
+    <section class="parent">
+      <h2 class="title2">垂直方向の揃え方 (親要素に指定)</h2>
+      <section class="section align">
+        <h3 class="title3">align-items: flex-start;</h3>
+        <p class="text">横配置で、上揃え。縦配置で、左揃え。</p>
+        <ul class="list align-items--flex-start">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+        <ul class="list direction--column align-items--flex-start">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section align">
+        <h3 class="title3">align-items: flex-end;</h3>
+        <p class="text">横配置で、下揃え。縦配置で、右揃え。</p>
+        <ul class="list align-items--flex-end">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+        <ul class="list direction--column align-items--flex-end">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section align">
+        <h3 class="title3">align-items: center;</h3>
+        <p class="text">中央ぞろえ。</p>
+        <ul class="list align-items--center">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section align">
+        <h3 class="title3">align-items: baseline;</h3>
+        <p class="text">ベースラインを揃える</p>
+        <ul class="list align-items--baseline">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+      <section class="section align">
+        <h3 class="title3">align-items:stretch;</h3>
+        <p class="text">高さいっぱいに広がる。<br>flex要素の高さが指定されていない場合は子要素の一番大きい要素に揃える</p>
+        <ul class="list align-items-stretch">
+          <li class="list__child">0</li>
+          <li class="list__child">1</li>
+          <li class="list__child">2</li>
+          <li class="list__child">3</li>
+        </ul>
+      </section>
+    </section>
+    <!--//////////////////////////////////////-->
+    <section class="parent">
+      <h2 class="title2">行の揃え方 (親要素に指定)
+        <div style="font-size:1.1rem; margin-top:10px;">flex-wrapをnowrap以外に設定して、複数行の時に有効</div>
+      </h2>
+      <section class="section">
+        <h3 class="title3">align-content: flex-start;</h3>
+        <p class="text">横配置で、上揃え。縦配置で、左揃え。</p>
+        <ul class="list wrap--wrap align-content--start h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+        <ul class="list wrap--wrap direction--column align-content--start h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-content: flex-end;</h3>
+        <p class="text">横配置で、下揃え。縦配置で、右揃え。</p>
+        <ul class="list wrap--wrap align-content--end h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+        <ul class="list wrap--wrap direction--column align-content--end h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-content: center;</h3>
+        <p class="text">中央揃え。</p>
+        <ul class="list wrap--wrap align-content--center h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-content: space-between;</h3>
+        <p class="text">等間隔に空ける。</p>
+        <ul class="list wrap--wrap align-content--between h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-content: space-around;</h3>
+        <p class="text">等間隔に空ける。両端は間の間隔の半分空ける。</p>
+        <ul class="list wrap--wrap align-content--around h300">
+          <li class="list__child w200">0</li>
+          <li class="list__child w200">1</li>
+          <li class="list__child w200">2</li>
+          <li class="list__child w200">3</li>
+          <li class="list__child w200">4</li>
+          <li class="list__child w200">5</li>
+        </ul>
+      </section>
+    </section>
+    <section class="parent">
+      <h2 class="title2">子要素の順番を指定 (子要素に指定)</h2>
+      <!--//////////////////////////////////////-->
+      <section class="section">
+        <h3 class="title3">order: 数字;</h3>
+        <p class="text">数字のに並べる。</p>
+        <ul class="list">
+          <li class="list__child" style="order:4;">1</li>
+          <li class="list__child" style="order:1;">2</li>
+          <li class="list__child" style="order:3;">3</li>
+          <li class="list__child" style="order:2;">4</li>
+        </ul>
+        <ul class="list direction--column">
+          <li class="list__child" style="order:4;">1</li>
+          <li class="list__child" style="order:1;">2</li>
+          <li class="list__child" style="order:3;">3</li>
+          <li class="list__child" style="order:2;">4</li>
+        </ul>
+      </section>
+    </section>
+    <section class="parent">
+      <h2 class="title2">子要素の個別に垂直方向の揃え方 (子要素に指定)</h2>
+      <!--//////////////////////////////////////-->
+      <section class="section">
+        <h3 class="title3">align-self: flex-start;</h3>
+        <p class="text">上寄せ（2番目）。</p>
+        <ul class="list h400">
+          <li class="list__child" style="height:140px;">1</li>
+          <li class="list__child" style="align-self:flex-start;">2</li>
+          <li class="list__child" style="height:200px;">3</li>
+          <li class="list__child">4</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-self: flex-end;</h3>
+        <p class="text">下寄せ（2番目）。</p>
+        <ul class="list h300">
+          <li class="list__child" style="height:140px;">1</li>
+          <li class="list__child" style="align-self:flex-end;">2</li>
+          <li class="list__child" style="height:200px;">3</li>
+          <li class="list__child">4</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-self: center;</h3>
+        <p class="text">中央寄せ（2番目）。</p>
+        <ul class="list h300">
+          <li class="list__child" style="height:140px;">1</li>
+          <li class="list__child" style="align-self:center;">2</li>
+          <li class="list__child" style="height:200px;">3</li>
+          <li class="list__child">4</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-self: baseline;</h3>
+        <p class="text">ベースラインを揃える（2番目）。</p>
+        <ul class="list h300">
+          <li class="list__child" style="height:140px;">1</li>
+          <li class="list__child" style="align-self:baseline;">2</li>
+          <li class="list__child" style="height:200px;">3</li>
+          <li class="list__child">4</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">align-self: stretch;</h3>
+        <p class="text">一番大きい要素、または親の高さまで伸びる（2番目）。</p>
+        <ul class="list h300">
+          <li class="list__child" style="height:140px;">1</li>
+          <li class="list__child" style="align-self:stretch;">2</li>
+          <li class="list__child" style="height:200px;">3</li>
+          <li class="list__child">4</li>
+        </ul>
+      </section>
+    </section>
+    <section class="parent">
+      <h2 class="title2">伸縮の設定 (子要素に指定)</h2>
+      <!--//////////////////////////////////////-->
+      <section class="section">
+        <h3 class="title3">flex-basis: 長さ;</h3>
+        <p class="text">基本となる長さを指定する。(今回は70px,指定しないと0pxとなる)。デフォルトはauto。</p>
+        <ul class="list">
+          <li class="list__child flex-basis">1</li>
+          <li class="list__child flex-basis">2</li>
+          <li class="list__child flex-basis">3</li>
+          <li class="list__child flex-basis">4</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-grow: 数値;</h3>
+        <p class="text">「全体の領域 - 各要素のbasisを足したもの」の余白を再分配する割合。<br>以下の例は全体を7としている。<br>(余白の残り ÷ 7)をそれぞれのgrowの割合で分ける。デフォルトは0。</p>
+        <ul class="list">
+          <li class="list__child flex-basis" style="flex-grow:1;">gr:1</li>
+          <li class="list__child flex-basis" style="flex-grow:1;">gr:1</li>
+          <li class="list__child flex-basis" style="flex-grow:2;">gr:2</li>
+          <li class="list__child flex-basis" style="flex-grow:3;">gr:3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex-shrink: 数値;</h3>
+        <p class="text">各要素が収まりきらない場合、shrinkで設定した割合でそれぞれ縮小して収まるように表示する。デフォルトは0。</p>
+        <ul class="list">
+          <li class="list__child flex-basis2" style="flex-shrink:1;">sh:1</li>
+          <li class="list__child flex-basis2" style="flex-shrink:1;">sh:1</li>
+          <li class="list__child flex-basis2" style="flex-shrink:2;">sh:2</li>
+          <li class="list__child flex-basis2" style="flex-shrink:3;">sh:3</li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="title3">flex: ‘flex-grow’ ’flex-shrink’ ’flex-basis’;</h3>
+        <p class="text">上記３つプロパティのショートハンド。noneを指定すると '0 0 auto'となる。</p>
+      </section>
+    </section>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

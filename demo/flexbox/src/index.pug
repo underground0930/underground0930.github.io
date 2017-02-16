@@ -1,0 +1,337 @@
+doctype html
+html(lang='ja', prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,user-scalable=no,initial-scale=1.0')
+    title flexbox
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    h1.title flexbox
+
+
+    section.parent
+      h2.title2 子要素の配置方向 (親要素に指定)
+      ////////////////////////////////////////
+      section.section
+        h3.title3 flex-direction: row;
+        p.text 左から並ぶ
+        ul(class="list direction--row")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 flex-direction: column;
+        p.text 上から並ぶ
+        ul(class="list direction--column")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 flex-direction: row-reverse;
+        p.text 右から並ぶ
+        ul(class="list direction--row-reverse")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 flex-direction: column-reverse;
+        p.text 下から並ぶ
+        ul(class="list direction--column-reverse")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+    ////////////////////////////////////////
+    section.parent
+      h2.title2 子要素の折り返し設定 (親要素に指定)
+      section.section
+        h3.title3 flex-wrap: nowrap;
+        p.text 折り返さない
+        ul(class="list wrap--nowrap")
+          - for(var i=0; i < 11; i++){
+              li(class="list__child") #{i}
+          - }
+
+      section.section
+        h3.title3 flex-wrap: wrap;
+        p.text 下に折り返す
+        ul(class="list wrap--wrap")
+          - for(var i=0; i < 11; i++){
+              li(class="list__child") #{i}
+          - }
+
+      section.section
+        h3.title3 flex-wrap: wrap-reverse;
+        p.text 上に折り返す
+        ul(class="list wrap--wrap-reverse")
+          - for(var i=0; i < 11; i++){
+              li(class="list__child") #{i}
+          - }
+
+    ////////////////////////////////////////
+    section.parent
+      h2.title2 columnとwrapの同時指定 (親要素に指定)
+      section.section
+        h3.title3 flex-flow: column wrap;
+        p.text flex-column と flex-wrap　を同時に指定する
+        ul(class="list flow--column-wrap h400")
+          - for(var i=0; i < 11; i++){
+              li(class="list__child") #{i}
+          - }
+
+    ////////////////////////////////////////
+    section.parent
+      h2.title2 水平方向の揃え方 (親要素に指定)
+      section.section
+        h3.title3 justify-content: flex-start;
+        p.text 横配置で、左揃え。縦配置で、上揃え。
+        ul(class="list justify--flex-start")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+        ul(class="list direction--column justify--flex-start")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 justify-content: flex-end;
+        p.text 横配置で、右揃え。縦配置で、下揃え。
+        ul(class="list justify--flex-end")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+        ul(class="list direction--column justify--flex-end")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 justify-content: center;
+        p.text 中央ぞろえ
+        ul(class="list justify--center")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 justify-content: space-between;
+        p.text  等間隔にあける
+        ul(class="list justify--space-between")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+      section.section
+        h3.title3 justify-content: space-around;
+        p.text  等間隔にあける、両端もその他のマージンの半分空ける
+        ul(class="list justify--space-around")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+
+    ////////////////////////////////////////
+    section.parent
+      h2.title2 垂直方向の揃え方 (親要素に指定)
+      section.section.align
+        h3.title3 align-items: flex-start;
+        p.text 横配置で、上揃え。縦配置で、左揃え。
+        ul(class="list align-items--flex-start")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+        ul(class="list direction--column align-items--flex-start")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+      section.section.align
+        h3.title3 align-items: flex-end;
+        p.text 横配置で、下揃え。縦配置で、右揃え。
+        ul(class="list align-items--flex-end")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+        ul(class="list direction--column align-items--flex-end")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+      section.section.align
+        h3.title3 align-items: center;
+        p.text 中央ぞろえ。
+        ul(class="list align-items--center")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+      section.section.align
+        h3.title3 align-items: baseline;
+        p.text ベースラインを揃える
+        ul(class="list align-items--baseline")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+      section.section.align
+        h3.title3 align-items:stretch;
+        p.text 高さいっぱいに広がる。<br>flex要素の高さが指定されていない場合は子要素の一番大きい要素に揃える
+        ul(class="list align-items-stretch")
+          - for(var i=0; i < 4; i++){
+              li(class="list__child") #{i}
+          - }
+
+
+    ////////////////////////////////////////
+    section.parent
+      h2.title2 行の揃え方 (親要素に指定)
+        div(style="font-size:1.1rem; margin-top:10px;")
+         | flex-wrapをnowrap以外に設定して、複数行の時に有効
+      section.section
+        h3.title3 align-content: flex-start;
+        p.text 横配置で、上揃え。縦配置で、左揃え。
+        ul(class="list wrap--wrap align-content--start h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+        ul(class="list wrap--wrap direction--column align-content--start h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+      section.section
+        h3.title3 align-content: flex-end;
+        p.text 横配置で、下揃え。縦配置で、右揃え。
+        ul(class="list wrap--wrap align-content--end h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+        ul(class="list wrap--wrap direction--column align-content--end h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+
+      section.section
+        h3.title3 align-content: center;
+        p.text 中央揃え。
+        ul(class="list wrap--wrap align-content--center h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+
+      section.section
+        h3.title3 align-content: space-between;
+        p.text 等間隔に空ける。
+        ul(class="list wrap--wrap align-content--between h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+
+      section.section
+        h3.title3 align-content: space-around;
+        p.text 等間隔に空ける。両端は間の間隔の半分空ける。
+        ul(class="list wrap--wrap align-content--around h300")
+          - for(var i=0; i < 6; i++){
+              li(class="list__child w200") #{i}
+          - }
+
+    section.parent
+      h2.title2 子要素の順番を指定 (子要素に指定)
+      ////////////////////////////////////////
+
+      section.section
+        h3.title3 order: 数字;
+        p.text 数字のに並べる。
+        ul(class="list")
+          li(class="list__child" style="order:4;") 1
+          li(class="list__child" style="order:1;") 2
+          li(class="list__child" style="order:3;") 3
+          li(class="list__child" style="order:2;") 4
+        ul(class="list direction--column")
+          li(class="list__child" style="order:4;") 1
+          li(class="list__child" style="order:1;") 2
+          li(class="list__child" style="order:3;") 3
+          li(class="list__child" style="order:2;") 4
+
+    section.parent
+      h2.title2 子要素の個別に垂直方向の揃え方 (子要素に指定)
+      ////////////////////////////////////////
+
+      section.section
+        h3.title3 align-self: flex-start;
+        p.text 上寄せ（2番目）。
+        ul(class="list h400")
+          li(class="list__child" style="height:140px;") 1
+          li(class="list__child" style="align-self:flex-start;") 2
+          li(class="list__child" style="height:200px;") 3
+          li(class="list__child" style="") 4
+
+      section.section
+        h3.title3 align-self: flex-end;
+        p.text 下寄せ（2番目）。
+        ul(class="list h300")
+          li(class="list__child" style="height:140px;") 1
+          li(class="list__child" style="align-self:flex-end;") 2
+          li(class="list__child" style="height:200px;") 3
+          li(class="list__child" style="") 4
+
+      section.section
+        h3.title3 align-self: center;
+        p.text 中央寄せ（2番目）。
+        ul(class="list h300")
+          li(class="list__child" style="height:140px;") 1
+          li(class="list__child" style="align-self:center;") 2
+          li(class="list__child" style="height:200px;") 3
+          li(class="list__child" style="") 4
+
+      section.section
+        h3.title3 align-self: baseline;
+        p.text ベースラインを揃える（2番目）。
+        ul(class="list h300")
+          li(class="list__child" style="height:140px;") 1
+          li(class="list__child" style="align-self:baseline;") 2
+          li(class="list__child" style="height:200px;") 3
+          li(class="list__child" style="") 4
+
+      section.section
+        h3.title3 align-self: stretch;
+        p.text 一番大きい要素、または親の高さまで伸びる（2番目）。
+        ul(class="list h300")
+          li(class="list__child" style="height:140px;") 1
+          li(class="list__child" style="align-self:stretch;") 2
+          li(class="list__child" style="height:200px;") 3
+          li(class="list__child" style="") 4
+
+
+    section.parent
+      h2.title2 伸縮の設定 (子要素に指定)
+      ////////////////////////////////////////
+
+      section.section
+        h3.title3 flex-basis: 長さ;
+        p.text 基本となる長さを指定する。(今回は70px,指定しないと0pxとなる)。デフォルトはauto。
+        ul(class="list")
+          li(class="list__child flex-basis") 1
+          li(class="list__child flex-basis") 2
+          li(class="list__child flex-basis") 3
+          li(class="list__child flex-basis") 4
+
+      section.section
+        h3.title3 flex-grow: 数値;
+        p.text 「全体の領域 - 各要素のbasisを足したもの」の余白を再分配する割合。<br>以下の例は全体を7としている。<br>(余白の残り ÷ 7)をそれぞれのgrowの割合で分ける。デフォルトは0。
+        ul(class="list")
+          li(class="list__child flex-basis" style="flex-grow:1;") gr:1
+          li(class="list__child flex-basis" style="flex-grow:1;") gr:1
+          li(class="list__child flex-basis" style="flex-grow:2;") gr:2
+          li(class="list__child flex-basis" style="flex-grow:3;") gr:3
+
+      section.section
+        h3.title3 flex-shrink: 数値;
+        p.text 各要素が収まりきらない場合、shrinkで設定した割合でそれぞれ縮小して収まるように表示する。デフォルトは0。
+        ul(class="list")
+          li(class="list__child flex-basis2" style="flex-shrink:1;") sh:1
+          li(class="list__child flex-basis2" style="flex-shrink:1;") sh:1
+          li(class="list__child flex-basis2" style="flex-shrink:2;") sh:2
+          li(class="list__child flex-basis2" style="flex-shrink:3;") sh:3
+
+      section.section
+        h3.title3 flex: ‘flex-grow’ ’flex-shrink’ ’flex-basis’;
+        p.text 上記３つプロパティのショートハンド。noneを指定すると '0 0 auto'となる。
+
+    script(src="./js/script.js")
